@@ -1,0 +1,797 @@
+/*========== Root variables ==========*/
+
+:root {
+  --primary-color: #ff585b;
+  --light-color: #ffffff;
+  --gray-color: #b2b2b2;
+  --dark-color: #000000;
+  --dark-grey-color: #202020;
+  --background-color: #121717;
+}
+
+/*========== Base styles ==========*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 60%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--light-color);
+  border-radius: 3rem;
+}
+
+body {
+  font-family: 'roboto', sans-serif;
+  background-color: var(--background-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*========== Css classes i use often ===========*/
+
+section {
+  padding: 5rem 8rem;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--primary-color);
+  color: var(--light-color);
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.color-green {
+  color: #00ff40;
+}
+
+.color-orange{
+  color: #ff8000;
+}
+
+.color-red {
+  color: #ff0000;
+}
+
+/*========== Header ==========*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12rem;
+  z-index: 10;
+  background: var(--dark-color);
+}
+
+.header .logo {
+  font-weight: 700;
+  color: var(--light-color);
+  font-size: 4rem;
+}
+
+.header .logo span {
+  color: var(--primary-color);
+}
+
+.header .navbar a {
+  display: inline-block;
+  padding: 2rem 2rem;
+  font-size: 2rem;
+  color: var(--light-color);
+  transition: .5s ease;
+}
+
+.header .navbar a:hover {
+  background: var(--primary-color);
+}
+
+#menu-btn {
+  font-size: 3rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: none;
+}
+
+/*========== End of Header ==========*/
+
+/*========== Big Banner ==========*/
+.bigbanner {
+  padding: 0;
+}
+
+.bigbanner .slide {
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 2rem 10rem;
+  display: flex;
+  align-items: center;
+}
+
+.bigbanner .slide .content {
+  width: 60rem;
+}
+
+.bigbanner .slide .content h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  display: block;
+}
+
+.bigbanner .slide .content h1 {
+  font-size: 5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.swiper-pagination-bullet {
+  height: 2rem;
+  width: 2rem;
+  background: var(--primary-color);
+  border-radius: 25px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--primary-color);
+}
+
+.text-focus-in {
+	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+}
+
+ @keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/*========== End of Big Banner ==========*/
+
+/*========== About ========== */
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+.about .image img {
+  width: 100%;
+  padding: 2rem;
+}
+
+.about .content {
+  flex: 1;
+}
+
+.about .content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: .5rem;
+}
+
+.about .content .title {
+  font-size: 4rem;
+  color: var(--light-color);
+}
+
+.about .content p {
+  font-size: 1.5rem;
+  color: var(--gray-color);
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.about .content .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .content .about-container .card h3 {
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.about .content .about-container .card h3 i {
+  padding-right: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+/*========== End of About ========== */
+
+/*========== Features ========== */
+.features .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+  gap: 2rem;
+}
+
+.features .card-container .card {
+  background: var(--dark-grey-color);
+}
+
+.features .card-container .card.second {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.features .card-container .card:hover .image img {
+  transform: scale(1.1);
+}
+
+.features .card-container .card .image {
+  overflow: hidden;
+}
+
+.features .card-container .card .image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.features .card-container .card .content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.features .card-container .card .content img {
+  height: 10rem;
+  margin-bottom: 1.5rem;
+  filter: invert(1);
+}
+
+.features .card-container .card .content h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.features .card-container .card .content p {
+  line-height: 2;
+  font-size: 1.5rem;
+  color: var(--gray-color);
+  padding: 1rem 0;
+}
+
+/*========== End of Features ========== */
+
+/*========== Pricing ========== */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+}
+
+.pricing .information h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.pricing .information h1 {
+  font-size: 4rem;
+  padding-top: .5rem;
+  color: var(--light-color);
+}
+
+.pricing .information p {
+  line-height: 2;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  color: var(--gray-color);
+}
+
+.pricing .information p i {
+  padding-right: 1rem;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.pricing .plan {
+  text-align: center;
+  padding: 2rem;
+}
+
+.pricing .plan.basic {
+  background: var(--dark-grey-color);
+  border-radius: 12px;
+}
+
+.pricing .plan.premium {
+  background: var(--light-color);
+  border-radius: 12px;
+}
+
+.pricing .plan.premium .list p {
+  color: var(--dark-color);
+}
+
+.pricing .plan h3 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: var(--light-color);
+}
+
+.pricing .plan.premium h3 {
+  color: var(--dark-color);
+}
+
+.pricing .plan .price {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.pricing .plan .price {
+  color: var(--primary-color);
+  font-size: 6rem;
+}
+
+.pricing .plan .list {
+  padding: 1rem 0;
+}
+
+.pricing .plan .list p {
+  line-height: 2;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gray-color);
+}
+
+.pricing .plan .list p i {
+  padding-right: 1rem;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.price-opacity {
+  opacity: .3;
+}
+
+/*========== End of Pricing ========== */
+
+/*========== CTA Banner ========== */
+.ctabanner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/banner-bg.jpg) no-repeat;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+.ctabanner h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.ctabanner h1 {
+  padding-top: 1rem;
+  color: var(--light-color);
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+.ctabanner p {
+  margin: 1rem auto;
+  max-width: 60rem;
+  font-size: 1.5rem;
+  color: var(--gray-color);
+  line-height: 2;
+}
+
+/*========== End of CTA Banner ========== */
+
+/*========== Review ========== */
+.review {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.review .information {
+  flex: 1 1 35rem;
+}
+
+.review .information h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.review .information h1 {
+  font-size: 3rem;
+  color: var(--light-color);
+}
+
+.review .information p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--gray-color);
+  padding: 1rem 0;
+}
+
+.review .review-slider {
+  flex: 1 1 80rem;
+}
+
+.review .review-slider .slide {
+  background: var(--dark-grey-color);
+  padding: 2rem 3rem;
+}
+
+.review .review-slider .slide p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--gray-color);
+  margin-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .user {
+  display: flex;
+  align-items: center;
+}
+
+.review .review-slider .slide .user img {
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.review .review-slider .slide .user h3 {
+  font-size: 2rem;
+  color: var(--light-color);
+  margin-bottom: .4rem;
+}
+
+.review .review-slider .slide .user h4 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/*========== End of Review ========== */
+
+/*========== BMI ===========*/
+.calculate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4rem 0;
+  background: var(--dark-grey-color);
+}
+
+.calculate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.description-container {
+  flex: 1;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--light-color);
+  font-size: 2rem;
+}
+
+.description h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.description p {
+  font-size: 1.6rem;
+  color: var(--gray-color);
+  line-height: 2;
+  padding: 1rem 10rem;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.calculate-form .calculate-input {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 2rem;
+  border: 2px solid var(--primary-color);
+  margin-bottom: 1.1rem;
+  color: var(--primary-color);
+}
+
+.calculate-input::-webkit-outer-spin-button,
+.calculate-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.calculate-form .btn {
+  width: 100%;
+}
+
+.calculate-form .btn:hover {
+  background: var(--light-color);
+  color: var(--primary-color);
+}
+
+.calculate-message {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .calculate-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    padding: 1rem;
+  }
+
+  .calculate-form .calculate-input,
+  .calculate-form .button {
+    font-size: 2rem;
+  }
+
+  .calculate-form .button {
+    padding: 1rem 2rem;
+  }
+}
+
+/*========== End of the BMI ===========*/
+
+/*========== Blogs ========== */
+.blogs .slide {
+  background: var(--dark-grey-color);
+  margin-bottom: 7rem;
+}
+
+.blogs .slide:hover .image img {
+  transform: scale(1.1);
+}
+
+.blogs .slide .image {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blogs .slide .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blogs .slide .content {
+  padding: 2rem;
+}
+
+.namedate {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blogs .slide .content h3 {
+  font-size: 2rem;
+  color: var(--light-color);
+  line-height: 1.5;
+}
+
+.blogs .slide .content p {
+  font-size: 1.5rem;
+  color: var(--gray-color);
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+/*========== End of Blogs ========== */
+
+/*========== Footer ========== */
+.footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .footer-container .card h3 {
+  font-size: 2.2rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .footer-container .card p {
+  font-size: 2rem;
+  color: var(--gray-color);
+  padding: 1rem 0;
+}
+
+.footer .footer-container .card p i {
+  padding-right: .5rem;
+  color: var(--primary-color);
+}
+
+.footer .footer-container .card .socials {
+  padding: 1rem 0;
+}
+
+.footer .footer-container .card .socials a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+  background: var(--dark-color);
+  border-radius: 50%;
+  margin-right: .5rem;
+  text-align: center;
+}
+
+.footer .footer-container .card .socials a:hover {
+  background: var(--primary-color);
+}
+
+.footer .footer-container .card form .email {
+  margin-bottom: 1rem;
+  width: 100%;
+  background: var(--dark-color);
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  text-transform: none;
+  border: 2px solid var(--primary-color);
+}
+
+/* ========== End of Footer ========== */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+    scroll-padding: 7rem;
+  }
+
+  .header {
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+
+  .bigbanner .slide {
+    padding: 2rem 5%;
+  }
+
+  .bigbanner .slide .content {
+    width: 50rem;
+  }
+
+  .bigbanner .slide .content h3 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  #menu-btn.fa-times {
+    transform: rotate(180deg);
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .header .navbar a {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .about {
+    gap: 3rem;
+  }
+
+  .about .image {
+    margin-top: 5rem;
+  }
+
+  .about .content .title {
+    font-size: 3rem;
+  }
+
+  .features .footer-container .card.second {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .features .card-container .card.second {
+    flex-flow: column;
+  }
+}
